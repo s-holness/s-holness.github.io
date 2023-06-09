@@ -11,7 +11,7 @@ Author: Swainson Holness
 
 A JSON set, or JSet, is a set of tuples, where each tuple is a pair consisting of a key and a value. Formally, a JSet is defined as follows:
 
-$ J_{set} = \left\{ (f(a_{1k}),a_{1v}), (f(a_{2k}),a_{2v}), \ldots, (f(a_{nk}),a_{nv}) \right\} $
+$J_{set} = \{ (f(a_{1k}),a_{1v}), (f(a_{2k}),a_{2v}), \ldots, (f(a_{nk}),a_{nv}) \}$
 
 where:
 
@@ -63,17 +63,17 @@ This operation is idempotent, i.e., $flat(flat(A)) = flat(A)$, and distributive 
 
 Let $f$ be the conflict resolution function. Then we have:
 
-\[ A \oplus (B \otimes C) = (A \oplus B) \otimes (A \oplus C) \]
+$$A \oplus (B \otimes C) = (A \oplus B) \otimes (A \oplus C)$$
 
 **Proof:** 
-$$ \begin{align*} A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = f(k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = (k', v') \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \otimes (A \oplus C) \end{align*} $$
+$$\begin{align*} A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = f(k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = (k', v') \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \otimes (A \oplus C) \end{align*}$$
 
 **Theorem 2: Non-Commutative JSet Difference and Union**
 
-\[A - (B \oplus C) = (A - B) \otimes (A - C) \]
+$$A - (B \oplus C) = (A - B) \otimes (A - C)$$
 
 **Proof:** 
-$$ \begin{align*} A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= (A - B) \otimes (A - C) \end{align*} $$
+$$\begin{align*} A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= (A - B) \otimes (A - C) \end{align*}$$
 
 ### Properties of Non-Commutative Operations
 
@@ -95,7 +95,7 @@ We extend the concept of JSet to a set of tuples with more than two elements. Th
 
 A Generalized JSON set, or GJSet, is a set of tuples, where each tuple is a pair consisting of a key and a value. The value can be a JSet itself, allowing for nested structures. Formally, a GJSet is defined as follows:
 
-$GJ_{set}=\left \{ (f(a_{1k}),a_{1v}),(f(a_{2k}),a_{2v}),...,(f(a_{nk}),a_{nv}) \right \}$
+$GJ_{set}= \{ (f(a_{1k}),a_{1v}),(f(a_{2k}),a_{2v}),...,(f(a_{nk}),a_{nv}) \}$
 
 where:
 
@@ -153,7 +153,7 @@ The new operations introduced in this paper, namely the merge, inverse, flatteni
 
 A Generalized JSON set, or GJSet, is a set of tuples, where each tuple consists of a key and a set of values. Formally, a GJSet is defined as follows:
 
-$GJ_{set}=\left \{ (f(a_{1k}),\{a_{1v1},a_{1v2},...,a_{1vn}\}),...,(f(a_{mk}),\{a_{mv1},a_{mv2},...,a_{mvn}\}) \right \}$
+$GJ_{set}= \{ (f(a_{1k}),\{a_{1v1},a_{1v2},...,a_{1vn}\}),...,(f(a_{mk}),\{a_{mv1},a_{mv2},...,a_{mvn}\}) \}$
 
 where:
 
