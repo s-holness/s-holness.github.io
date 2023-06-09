@@ -66,14 +66,14 @@ Let $f$ be the conflict resolution function. Then we have:
 $$A \oplus (B \otimes C) = (A \oplus B) \otimes (A \oplus C)$$
 
 **Proof:** 
-$$\begin{align*} A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = f(k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = (k', v') \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \otimes (A \oplus C) \end{align*}$$
+$$\begin{align} A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = f(k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = (k', v') \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \otimes (A \oplus C) \end{align}$$
 
 **Theorem 2: Non-Commutative JSet Difference and Union**
 
 $$A - (B \oplus C) = (A - B) \otimes (A - C)$$
 
 **Proof:** 
-$$\begin{align*} A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= (A - B) \otimes (A - C) \end{align*}$$
+$$\begin{align} A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= (A - B) \otimes (A - C) \end{align}$$
 
 ### Properties of Non-Commutative Operations
 
