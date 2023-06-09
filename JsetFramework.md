@@ -66,7 +66,17 @@ Let $f$ be the conflict resolution function. Then we have:
 $$A \oplus (B \otimes C) = (A \oplus B) \otimes (A \oplus C)$$
 
 **Proof:** 
-$$\begin{align} A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = f(k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = (k', v') \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ &= (A \oplus B) \otimes (A \oplus C) \end{align}$$
+$$
+\begin{aligned} 
+A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ 
+&= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = f(k', v') \} \\ 
+&= \{(k, v) | (k, v) \in A \text{ or } \exists k', v' : (k', v') \in B \text{ and } (k, v) = (k', v') \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ 
+&= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \} \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ 
+&= (A \oplus B) \cup \{(k, v) | (k, v) \in A \text{ and } \exists k', v' : (k', v') \in B \text{ and } (k, v) \neq (k', v') \} \\ 
+&= (A \oplus B) \otimes (A \oplus C) 
+\end{aligned}
+$$
+
 
 **Theorem 2: Non-Commutative JSet Difference and Union**
 
