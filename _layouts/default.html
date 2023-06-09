@@ -14,6 +14,14 @@
         onload="renderMathInElement(document.body);"></script>
   </head>
   <body>
+    <script>
+    window.onload = function() {
+        renderMathInElement(document.body, {delimiters: [
+            {left: '$', right: '$', display: false},
+            {left: '$$', right: '$$', display: true},
+        ]});
+    };
+    </script>
     {{ content }}
   </body>
 </html>
