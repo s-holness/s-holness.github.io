@@ -73,7 +73,7 @@ $$\begin{align} A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k
 $$A - (B \oplus C) = (A - B) \otimes (A - C)$$
 
 **Proof:** 
-$$\begin{align} A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= (A - B) \otimes (A - C) \end{align}$$
+$$\begin{align*} A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin C \} \cup \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B \text{ and } (k, v) \notin C \} \\ &= (A - B) \otimes (A - C) \end{align*}$$
 
 ### Properties of Non-Commutative Operations
 
