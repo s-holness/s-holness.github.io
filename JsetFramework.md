@@ -65,7 +65,7 @@ Let $f$ be the conflict resolution function. Then we have:
 
 $$A \oplus (B \otimes C) = (A \oplus B) \otimes (A \oplus C)$$
 
-**Proof:** 
+### Proof: 
 $$
 \begin{aligned} 
 A \oplus (B \otimes C) &= \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B \otimes C \} \\ 
@@ -82,7 +82,7 @@ $$
 
 $$A - (B \oplus C) = (A - B) \otimes (A - C)$$
 
-**Proof:** 
+### Proof: 
 $$
 \begin{aligned} 
 A - (B \oplus C) &= \{(k, v) | (k, v) \in A \text{ and } (k, v) \notin B \oplus C \} \\ 
