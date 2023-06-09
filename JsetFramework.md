@@ -11,7 +11,7 @@ Author: Swainson Holness
 
 A JSON set, or JSet, is a set of tuples, where each tuple is a pair consisting of a key and a value. Formally, a JSet is defined as follows:
 
-$J_{set}=\left \{ (f(a_{1k}),a_{1v}),(f(a_{2k}),a_{2v}),...,(f(a_{nk}),a_{nv}) \right \}$
+$ J_{set} = \left\{ (f(a_{1k}),a_{1v}), (f(a_{2k}),a_{2v}), \ldots, (f(a_{nk}),a_{nv}) \right\} $
 
 where:
 
