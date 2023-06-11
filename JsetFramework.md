@@ -15,19 +15,19 @@ $$J_{set} = \{ (f(a_{1k}),a_{1v}), (f(a_{2k}),a_{2v}), \ldots, (f(a_{nk}),a_{nv}
 
 where:
 
-- \(f\) is a function that maps each key \(a_{ik}\) to a unique identifier. The function \(f\) could be deterministic or probabilistic. 
-  - If \(f\) is deterministic, then it is a bijection, meaning that it maps each key to a unique identifier and each identifier to a unique key. This is akin to a function that always produces the same output for the same input.
-  - If \(f\) is probabilistic, then it maps each key to a random number with a certain probability distribution. This is akin to a function that may produce different outputs for the same input based on certain probabilities.
+- $f$ is a function that maps each key $a_{ik}$ to a unique identifier. The function $f$ could be deterministic or probabilistic. 
+  - If $f$ is deterministic, then it is a bijection, meaning that it maps each key to a unique identifier and each identifier to a unique key. This is akin to a function that always produces the same output for the same input.
+  - If $f$ is probabilistic, then it maps each key to a random number with a certain probability distribution. This is akin to a function that may produce different outputs for the same input based on certain probabilities.
 
-- Each key \(a_{ik}\) is a string, number, or a function that returns a string or number. This is consistent with the classic definition of JSON keys.
+- Each key $a_{ik}$ is a string, number, or a function that returns a string or number. This is consistent with the classic definition of JSON keys.
 
-- Each value \(a_{iv}\) is an element of a type dictionary \(D\), which is defined for a specific use case. \(D\) is a subset of a general super dictionary \(D_{super}\), which contains all possible types. The types can include but are not limited to:
+- Each value $a_{iv}$ is an element of a type dictionary $D$, which is defined for a specific use case. $D$ is a subset of a general super dictionary $D_{super}$, which contains all possible types. The types can include but are not limited to:
   - Basic data types: string, number, boolean, null
   - Data structures: array, object, map
-  - Functions: functions that return a value of a type in \(D\)
+  - Functions: functions that return a value of a type in $D$
   - Other JSets: allowing for nested JSON objects
 
-- The \(J_{set}\) is fundamentally unordered. If an order is to be considered, it must be defined separately through an operation. This operation could be a sort function that orders the tuples in the JSet based on their keys or values, or it could be a more complex function that orders the tuples based on some other criteria. The order is not inherent to the JSet, but is a property that is defined on it by an operation.
+- The $J_{set}$ is fundamentally unordered. If an order is to be considered, it must be defined separately through an operation. This operation could be a sort function that orders the tuples in the JSet based on their keys or values, or it could be a more complex function that orders the tuples based on some other criteria. The order is not inherent to the JSet, but is a property that is defined on it by an operation.
 
 ### Definition: Non-Commutative JSet Union with Nested Conflict Resolution
 
