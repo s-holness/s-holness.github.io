@@ -74,6 +74,14 @@ The conflict resolution function $f$ takes a key $k$, a value $v$, and a JSet $B
 
 This definition is not commutative, i.e., $A - B \neq B - A$, unless both JSets are identical. The order of the operands affects the result, reflecting the elements that are unique to the first JSet.
 
+The conflict resolution function $f$ is a function that takes a key, a value, and a JSet, and returns a boolean value. The function $f$ can be any deterministic function that takes these inputs and returns a boolean value. Here are some examples of conflict resolution functions:
+
+* **Existence function:** This function returns true if the key-value pair exists in the JSet, and false otherwise. For example, if $f$ is the existence function, then $f(k, v, B) = true$ if $(k, v) \in B$, and $f(k, v, B) = false$ otherwise.
+* **Non-existence function:** This function returns true if the key-value pair does not exist in the JSet, and false otherwise. For example, if $f$ is the non-existence function, then $f(k, v, B) = true$ if $(k, v) \notin B$, and $f(k, v, B) = false$ otherwise.
+* **User-defined function:** A user-defined function can be used to resolve conflicts in a more sophisticated way. For example, a user-defined function could be used to prioritize values based on their importance.
+
+The performance of the JSet difference operation is O(n * m), where n is the size of A and m is the size of B. This is because the function $f$ must be applied to every key-value pair in A.
+
 ### Definition: JSet Merge Operation
 
 The merge operation of two JSets A and B, denoted $A \bigtriangledown B$, is the JSet consisting of key-value pairs which are in A, in B, or in both. If a key k appears in both A and B but with different values, i.e., $A = \{(k, v_A), ...\}$ and $B = \{(k, v_B), ...\}$ where $v_A \neq v_B$, then a new JSet is created where the conflicting values are nested under the original key $k$. Formally, $A \bigtriangledown B = \{(k, \{(k, v_A), (k, v_B)\}), ...\}$.
