@@ -44,17 +44,27 @@ The conflict resolution function $f$ is a function that takes two values for the
 
 This definition is not commutative, i.e., $A \oplus B \neq B \oplus A$. The order of the operands affects the result, reflecting the priority given to the values of the JSet performing the union operation in case of a key conflict. The performance of non-commutative JSet union is O(n * m), where n is the size of A and m is the size of B. This is because the function $f$ must be applied to every pair of values for the same key. Non-commutative JSet union is a useful operation for tasks that require the ability to resolve conflicts between values for the same key. For example, non-commutative JSet union can be used to merge two datasets that contain the same set of keys but different sets of values for those keys.
 
-### Definition: Non-Commutative JSet Intersection
+### Definition: Non-Commutative JSet Intersection with Conflict Resolution
 
-The non-commutative intersection of two JSets A and B, denoted $A \otimes B$, is the JSet consisting of key-value pairs which are in both A and B. Formally, $A \otimes B = \{(k, v) | (k, v) \in A \text{ and } (k, v) \in B\}$.
+The non-commutative intersection of two JSets $A$ and $B$, denoted $A \otimes B$, is the JSet consisting of key-value pairs which are in both $A$ and $B$. Formally,
 
-If a key k appears in both A and B but with different values, i.e., $A = \{(k, v_A), ...\}$ and $B = \{(k, v_B), ...\}$ where $v_A \neq v_B$, then a deterministic conflict resolution function $f$ is applied to the values $v_A$ and $v_B$ to produce a new value $v' = f(v_A, v_B)$, and the value from
+$$A \otimes B = \\{(k, v) \mid (k, v) \in A \text{ and } (k, v) \in B\\}.$$
 
-the JSet performing the intersection operation is used in the intersection, i.e.,
+If a key $k$ appears in both $A$ and $B$ but with different values, i.e., $A = \\{(k, v_A), ...\\}$ and $B = \\{(k, v_B), ...\\}$ where $v_A \neq v_B$, then a deterministic conflict resolution function $f$ is applied to the values $v_A$ and $v_B$ to produce a new value $v' = f(v_A, v_B)$. The value $v'$ is then used in the intersection, i.e.,
 
-$A \otimes B = \{(k, v_A), ...\}$ and $B \otimes A = \{(k, v_B), ...\}$.
+$$A \otimes B = \\{(k, v'), ...\\} \text{ and } B \otimes A = \\{(k, v'), ...\\}.$$
+
+The conflict resolution function $f$ is a function that takes two values for the same key and returns a single value. The function $f$ can be any deterministic function, such as the max function or the min function. Here are some examples of conflict resolution functions:
+
+* **Max function:** The max function returns the maximum of two values. For example, if $f$ is the max function, then $f(1, 2) = 2$ and $f(3, 4) = 4$.
+* **Min function:** The min function returns the minimum of two values. For example, if $f$ is the min function, then $f(1, 2) = 1$ and $f(3, 4) = 3$.
+* **User-defined function:** A user-defined function can be used to resolve conflicts in a more sophisticated way. For example, a user-defined function could be used to prioritize values based on their importance.
 
 This definition is not commutative, i.e., $A \otimes B \neq B \otimes A$. The order of the operands affects the result, reflecting the priority given to the values of the JSet performing the intersection operation in case of a key conflict.
+
+The performance of non-commutative JSet intersection is $O(n \times m)$, where $n$ is the size of $A$ and $m$ is the size of $B$. This is because the function $f$ must be applied to every pair of values for the same key.
+
+Non-commutative JSet intersection is a useful operation for tasks that require the ability to resolve conflicts between values for the same key. For example, non-commutative JSet intersection can be used to merge two datasets that contain the same set of keys but different sets of values for those keys.
 
 ### Definition: JSet Difference with Conflict Resolution
 
