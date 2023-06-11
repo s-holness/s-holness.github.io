@@ -31,23 +31,21 @@ where:
 
 ### Definition: Non-Commutative JSet Union with Nested Conflict Resolution
 
-The non-commutative union of two JSets A and B, denoted $A \oplus B$, is the JSet consisting of key-value pairs which are in A, in B, or in both. Formally, $A \oplus B = \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B\}$.
+The non-commutative union of two JSets A and B, denoted \(A \oplus B\), is the JSet consisting of key-value pairs which are in A, in B, or in both. Formally, \(A \oplus B = \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B\}\).
 
-If a key $k$ appears in both A and B but with different values, i.e., $A = \{(k, v_A), ...\}$ and $B = \{(k, v_B), ...\}$ where $v_A \neq v_B$, then a deterministic conflict resolution function $f$ is applied to create a nested JSet under the original key $k$, i.e., $A \oplus B = \{(k, \{(k, v_A), (k, v_B)\}), ...\}$.
+If a key \(k\) appears in both A and B but with different values, i.e., \(A = \{(k, v_A), ...\}\) and \(B = \{(k, v_B), ...\}\) where \(v_A \neq v_B\), then a deterministic conflict resolution function \(f\) is applied to create a nested JSet under the original key \(k\), i.e., \(A \oplus B = \{(k, \{(k, v_A), (k, v_B)\}), ...\}\).
 
-The conflict resolution function $f$ is a function that takes two values for the same key and returns a single value. The function $f$ can be any deterministic function, such as the max function or the min function. Here are some examples of conflict resolution functions:
+The conflict resolution function \(f\) is a function that takes two values for the same key and returns a single value. The function \(f\) can be any deterministic function, such as the max function or the min function. Here are some examples of conflict resolution functions:
 
-- **Max function:** The max function returns the maximum of two values. For example, if $f$ is the max function, then $f(1, 2) = 2$ and $f(3, 4) = 4$.
-- **Min function:** The min function returns the minimum of two values. For example, if $f$ is the min function, then $f(1, 2) = 1$ and $f(3, 4) = 3$.
+- **Max function:** The max function returns the maximum of two values. For example, if \(f\) is the max function, then \(f(1, 2) = 2\) and \(f(3, 4) = 4\).
+- **Min function:** The min function returns the minimum of two values. For example, if \(f\) is the min function, then \(f(1, 2) = 1\) and \(f(3, 4) = 3\).
 - **User-defined function:** A user-defined function can be used to resolve conflicts in a more sophisticated way. For example, a user-defined function could be used to prioritize values based on their importance.
 
-This definition is not commutative, i.e., $A \oplus B \neq B \oplus A$. The order of the operands affects the result, reflecting the priority given to the values of the JSet performing the union operation in case of a key conflict.
+This definition is not commutative, i.e., \(A \oplus B \neq B \oplus A\). The order of the operands affects the result, reflecting the priority given to the values of the JSet performing the union operation in case of a key conflict.
 
-The performance of non-commutative JSet union is O(n * m), where n is the size of A and m is the size of B. This is because the function $f$ must be applied to every pair of values for the same key.
+The performance of non-commutative JSet union is O(n * m), where n is the size of A and m is the size of B. This is because the function \(f\) must be applied to every pair of values for the same key.
 
-Non-commutative
-
-JSet union is a useful operation for tasks that require the ability to resolve conflicts between values for the same key. For example, non-commutative JSet union can be used to merge two datasets that contain the same set of keys but different sets of values for those keys.
+Non-commutative JSet union is a useful operation for tasks that require the ability to resolve conflicts between values for the same key. For example, non-commutative JSet union can be used to merge two datasets that contain the same set of keys but different sets of values for those keys.
 
 ### Definition: Non-Commutative JSet Intersection
 
