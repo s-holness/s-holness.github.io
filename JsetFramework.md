@@ -31,7 +31,10 @@ where:
 
 ### Definition: Non-Commutative JSet Union with Nested Conflict Resolution
 
-The non-commutative union of two JSets A and B, denoted $A \oplus B$, is the JSet consisting of key-value pairs which are in A, in B, or in both. Formally, $A \oplus B = \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B\}$. If a key $k$ appears in both A and B but with different values, i.e., $A = \{(k, v_A), ...\}$ and $B = \{(k, v_B), ...\}$ where $v_A \neq v_B$, then a deterministic conflict resolution function $f$ is applied to create a nested JSet under the original key $k$, i.e., $$A \oplus B = \{(k, \{(k, v_A), (k, v_B)\}), ...\}$$.
+The non-commutative union of two JSets A and B, denoted $A \oplus B$, is the JSet consisting of key-value pairs which are in A, in B, or in both. Formally, $A \oplus B = \{(k, v) | (k, v) \in A \text{ or } (k, v) \in B\}$.
+If a key $k$ appears in both A and B but with different values, i.e., $A = \{(k, v_A), ...\}$ and $B = \{(k, v_B), ...\}$ where $v_A \neq v_B$, then a deterministic conflict resolution function $f$ is applied to create a nested JSet under the original key $k$, i.e., 
+
+$$A \oplus B = \{(k, \{(k, v_A), (k, v_B)\}), ...\}$$
 
 The conflict resolution function $f$ is a function that takes two values for the same key and returns a single value. The function $f$ can be any deterministic function, such as the max function or the min function. Here are some examples of conflict resolution functions:
 
